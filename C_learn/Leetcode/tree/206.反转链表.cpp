@@ -1,0 +1,44 @@
+/*
+ * @lc app=leetcode.cn id=206 lang=cpp
+ *
+ * [206] 反转链表
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+#include<iostream>
+using namespace std;
+struct ListNode{
+    int val;
+    ListNode *next;
+    ListNode() : val(0),next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr){}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+class Solution {
+public:
+    ListNode* Reverse(ListNode *head){
+        ListNode *temp = head , *prev = NULL;
+        while(temp != NULL){
+            ListNode* next = temp->next;
+            temp->next = prev;
+            prev = temp;
+            temp = next;
+        }
+        return prev;
+    }
+    ListNode* reverseList(ListNode* head) {
+        return Reverse(head);
+    }
+};
+// @lc code=end
+

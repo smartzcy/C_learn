@@ -1,0 +1,24 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int num[10010];
+int main(){
+    int T;
+    cin >> T;
+    while(T--){
+        int n;
+        cin >> n;
+        int l = 1 , r = n;
+        while(l < r){
+            int mid = (l + r) >> 1 , cnt = 0;
+            cout << "?" << l << " " << mid << endl;
+            for(int i = 0; i <= mid - l ;i++){
+                cin >> num[i];
+                cnt += (num[i] >= l && num[i] <= mid);
+            }
+            if(cnt % 2 == 1) r = mid;
+            else l = mid;
+        }
+        cout << "!" << l << endl;
+    }
+}

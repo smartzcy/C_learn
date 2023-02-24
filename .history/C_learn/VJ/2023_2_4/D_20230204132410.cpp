@@ -1,0 +1,32 @@
+#include <iostream>
+#include <array>
+#include <algorithm>
+using namespace std;
+const int N = 1e6;
+int n, m, f[N];
+void INIT() {
+    for (int i = 1; i <= n; i++) f[i] = i;
+}
+int find(int x) {
+    return x == f[x] ? x : f[x] = find(f[x]);
+}
+array<int, 3> edge[N];
+int ans, num;
+void kru() {
+    sort(edge + 1, edge + 1 + m);
+    INIT();
+    ans = 0;
+    num = 0;
+    for (int i = 1; i <= m; i++) {
+        auto [w, u, v] = edge[i];
+        int fu = find(u);
+        int fv = find(v);
+        if (fu != fv) {
+            num++;
+            ans += w;
+            f[fu] = fv;
+        }
+    }
+}
+int main() {
+}
