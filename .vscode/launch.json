@@ -1,6 +1,27 @@
 {
     "configurations": [
         {
+            "type": "java",
+            "name": "ComputeExpression",
+            "request": "launch",
+            "mainClass": "Lesson1.ComputeExpression",
+            "projectName": "VScode_38f799e3"
+        },
+        {
+            "type": "java",
+            "name": "WelcomeWithThreeMessages",
+            "request": "launch",
+            "mainClass": "Lesson1.WelcomeWithThreeMessages",
+            "projectName": "VScode_38f799e3"
+        },
+        {
+            "type": "java",
+            "name": "Welcome",
+            "request": "launch",
+            "mainClass": "Lesson1.Welcome",
+            "projectName": "VScode_38f799e3"
+        },
+        {
             "name": "C/C++: g++.exe 生成和调试活动文件",
             "type": "cppdbg",
             "request": "launch",
